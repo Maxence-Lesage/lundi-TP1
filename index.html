@@ -5,11 +5,32 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="./index.js" defer>
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js" defer></script>
 </head>
 
 <body>
+  <section id="to_do_list">
+    <ul>
 
+    </ul>
+  </section>
+
+  <section>
+    <form id="to_do_list_form" action="">
+      <label for="form_task_name">Nom de la tâche :</label>
+      <input id="form_task_name" name="task_name" type="text">
+      <label for="form_task_priority">Priorité :</label>
+      <select id="form_task_priority" name="task_priority">
+        <option value="1">Priorité 1</option>
+        <option value="2">Priorité 2</option>
+        <option value="3">Priorité 3</option>
+      </select>
+      <input type="button" value="Ajouter la tâche">
+    </form>
+
+    <input class="delete_tasks" type="button" value="Supprimer les tâches">
+  </section>
 </body>
 
 </html>

@@ -1,0 +1,20 @@
+.priority_1 {
+  color: red;
+}
+
+.priority_2 {
+  color: rgb(0, 170, 0);
+}
+
+.priority_3 {
+  color: blue;
+}
+
+#to_do_list_form {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  gap: 3px;
+}
