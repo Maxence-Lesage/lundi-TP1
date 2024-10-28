@@ -1,20 +1,135 @@
-.priority_1 {
-  color: red;
+body {
+  background-color: antiquewhite;
+  margin: 0 auto;
 }
 
-.priority_2 {
-  color: rgb(0, 170, 0);
+/*---------------------------------------------------------------*/
+/*---TO DO LIST---*/
+
+.to_do_list_container {
+  width: 100%;
 }
 
-.priority_3 {
-  color: blue;
+.to_do_list_container td,
+.to_do_list_container th {
+  border: 1px solid #787878;
+  padding: 12px;
 }
 
-#to_do_list_form {
+.header_priority_1,
+.header_priority_2,
+.header_priority_3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+  color: white;
+  width: 33.3%;
+}
+
+.header_priority_1 {
+  background-color: rgb(150, 0, 0);
+}
+
+.header_priority_2 {
+  background-color: rgb(0, 150, 0);
+}
+
+.header_priority_3 {
+  background-color: rgb(0, 0, 150);
+}
+
+.column_priority_1 {
+  background-color: rgba(200, 0, 0, 0.2);
+}
+
+.column_priority_2 {
+  background-color: rgb(0, 200, 0, 0.2);
+}
+
+.column_priority_3 {
+  background-color: rgb(0, 0, 200, 0.2);
+}
+
+.table_column {
+  vertical-align: text-top;
+}
+
+.table_column label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 20px;
+  background-color: antiquewhite;
+  border: 1px solid gray;
+  border-radius: 3px;
+  box-sizing: border-box;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.table_column label input {
+  height: 25px;
+  width: 25px;
+}
+
+/*---------------------------------------------------------------*/
+/*---FORMULAIRE---*/
+
+#form_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#to_do_list_form fieldset {
+  box-sizing: content-box;
+  padding: 10px 10px;
+  display: flex;
+  gap: 15px;
+  border-width: 3px;
+  border-color: rgba(0, 0, 0, 0.5);
+  height: 75px;
+}
+
+#to_do_list_form legend {
+  font-size: 24px;
+}
+
+.flexcol,
+.button {
+  height: 100%;
+}
+
+.flexcol {
   display: flex;
   flex-direction: column;
-  width: 250px;
-  margin-top: 100px;
-  margin-bottom: 50px;
-  gap: 3px;
+  gap: 5px;
+}
+
+.flexcol label {
+  font-size: 18px;
+}
+
+.flexcol select,
+.flexcol input {
+  height: 25px;
+}
+
+.button {
+  box-sizing: border-box;
+  padding: 10px 10px;
+  font-size: 20px;
+  font-weight: 600;
+  background-color: whitesmoke;
+  border-color: rgba(120, 120, 120, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete_tasks {
+  box-sizing: border-box;
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-right: 3px;
 }

@@ -11,25 +11,41 @@
 
 <body>
   <section id="to_do_list">
-    <ul>
-
-    </ul>
+    <table class="to_do_list_container">
+      <tr>
+        <th class="header_priority_1">Très important</th>
+        <th class="header_priority_2">Moyennement important</th>
+        <th class="header_priority_3">Peu important</th>
+      </tr>
+      <tr>
+        <td class="table_column column_priority_1" data-priority="1"></td>
+        <td class="table_column column_priority_2" data-priority="2"></td>
+        <td class="table_column column_priority_3" data-priority="3"></td>
+      </tr>
+    </table>
   </section>
 
-  <section>
+  <section id="form_container">
     <form id="to_do_list_form" action="">
-      <label for="form_task_name">Nom de la tâche :</label>
-      <input id="form_task_name" name="task_name" type="text">
-      <label for="form_task_priority">Priorité :</label>
-      <select id="form_task_priority" name="task_priority">
-        <option value="1">Priorité 1</option>
-        <option value="2">Priorité 2</option>
-        <option value="3">Priorité 3</option>
-      </select>
-      <input type="button" value="Ajouter la tâche">
+      <fieldset>
+        <legend>Ajouter une tâche</legend>
+        <div class="flexcol">
+          <label for="form_task_name">Nom de la tâche :</label>
+          <input id="form_task_name" name="task_name" type="text" placeholder="Faire le ménage...">
+        </div>
+        <div class="flexcol">
+          <label for="form_task_priority">Priorité :</label>
+          <select id="form_task_priority" name="task_priority">
+            <option value="1">Très important</option>
+            <option value="2">Moyennement important</option>
+            <option value="3">Peu important</option>
+          </select>
+        </div>
+        <input class="button" type="button" value="Ajouter la tâche">
+      </fieldset>
     </form>
 
-    <input class="delete_tasks" type="button" value="Supprimer les tâches">
+    <input class="delete_tasks button" type="button" value="Supprimer les tâches sélectionnées">
   </section>
 </body>
 

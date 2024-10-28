@@ -1,19 +1,19 @@
 let tasks = [
   {
-    title: "Apprendre mon cours de JavaScript",
+    title: "Abattre les murs porteurs",
     priority: 1
   },
   {
-    title: "Créer mon compte Github",
+    title: "Courrir après les rats/souris",
     priority: 2
   },
   {
-    title: "Répondre à mes emails",
+    title: "Ne pas répondre aux mails",
     priority: 3
   }
 ];
 
-const to_do_list = document.querySelector('#to_do_list ul');
+const to_do_list = document.querySelectorAll('td[data-priority]');
 const to_do_list_form = document.querySelector('#to_do_list_form');
 const to_do_list_button = document.querySelector('#to_do_list_form input[type="button"]');
 
@@ -31,14 +31,6 @@ if (localStorage.getItem('todolist')) {
 to_do_list_button.addEventListener('click', (e) => {
   e.preventDefault();
   const form_data = new FormData(to_do_list_form);
-  to_do_list.innerHTML += `
-    <li>
-        <label class="priority_${form_data.get("task_priority")}">
-            <input type="checkbox">
-            ${form_data.get("task_name")}
-        </label>
-    </li>
-  `;
   tasks.push({
     title: form_data.get("task_name"),
     priority: parseInt(form_data.get("task_priority"))
@@ -61,15 +53,13 @@ function setToLocalStorage() {
 }
 
 function renderTasks() {
-  to_do_list.innerHTML = null;
+  to_do_list.forEach(item => item.innerHTML = null)
   for (const task of tasks) {
-    to_do_list.innerHTML += `
-      <li>
-          <label class="priority_${task.priority}">
-              <input type="checkbox">
-              ${task.title}
-          </label>
-      </li>
+    to_do_list[task.priority - 1].innerHTML += `
+      <label class="priority_${task.priority}">
+          <input type="checkbox">
+          ${task.title}
+      </label>
     `;
   }
 }
@@ -81,20 +71,23 @@ function renderTasks() {
 const tasks_delete_btn = document.querySelector('.delete_tasks');
 
 tasks_delete_btn.addEventListener('click', () => {
-  const tasks_lists = document.querySelectorAll('#to_do_list ul li');
+  const tasks_lists = document.querySelectorAll('.table_column label');
   let counter = 0;
-  for (let i = 0; i < tasks_lists.length; i++) {
+
+  for (let i = tasks_lists.length - 1; i >= 0; i--) {
     const checkbox = tasks_lists[i].querySelector('input[type="checkbox"]');
     if (checkbox.checked) {
       counter++;
       tasks.splice(i, 1);
     }
   }
+
   if (counter > 0) {
     renderTasks();
     setToLocalStorage();
-    window.alert(`${counter} tâches supprimées avec succès`)
+    window.alert(`${counter} tâches supprimées avec succès`);
   }
-})
+});
+
 
 
