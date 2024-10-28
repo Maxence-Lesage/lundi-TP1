@@ -4,11 +4,35 @@ let tasks = [
     priority: 1
   },
   {
+    title: "Nourrir le chien",
+    priority: 1
+  },
+  {
+    title: "Partir en guerre contre les moustiques",
+    priority: 1
+  },
+  {
     title: "Courrir après les rats/souris",
     priority: 2
   },
   {
+    title: "Acheter un marteau-piqueur",
+    priority: 2
+  },
+  {
     title: "Ne pas répondre aux mails",
+    priority: 3
+  },
+  {
+    title: "Se dénoncer pour le crime commis",
+    priority: 3
+  },
+  {
+    title: "Dormir",
+    priority: 3
+  },
+  {
+    title: "Peindre un passage piéton devant la porte",
     priority: 3
   }
 ];
